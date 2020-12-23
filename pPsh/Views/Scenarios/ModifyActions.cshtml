@@ -1,0 +1,51 @@
+﻿@using pPsh.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "Modify Scenario Actions for " + ViewBag.Scenario.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Email Actions</h3>
+
+<p>
+    @Html.ActionLink("+ Create New Email Action", "CreateEmailAction", new { id = @ViewBag.Scenario.ID} , new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Recipient Address
+        </th>
+        <th>
+            Subject
+        </th>
+        <th>
+            Body
+        </th>
+        <th>
+            Subject
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (ScenarioEmail item in ViewBag.EmailActions as List<ScenarioEmail>) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEmailAction", new { id = item.ID }, new { @class = "btn btn-secondary" }) 
+                @Html.ActionLink("Remove", "DeleteEmailAction", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

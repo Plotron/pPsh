@@ -1,0 +1,30 @@
+﻿@using System.Collections.Specialized
+
+@{
+    ViewBag.Title = "About";
+}
+<h1>About pPsh<small class="text-muted"> - prettyPush</small></h1>
+<p>A push-type service for IoT and other internet-enabled devices for sending notifications and automatic execution of predefined scenarios based on device input.</p>
+<div class="jumbotron">
+    <h2>We're here to serve you.</h2>
+    <p>Currently, there’s a boom in the market for smart IoT devices. Online message push services enable enterprising embedded system developers to create smart sensors that broadcast their readings online. Inspired by <a href="//www.pushingbox.com">PushingBox</a>, this IoT Push Service codenamed pPsh aims to fulfill those needs.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+    </div>
+<h2>Service Statistics</h2>
+<table class="table">
+    @{
+        NameValueCollection statistics = ViewBag.Statistics;
+
+        var items = statistics.AllKeys.SelectMany(statistics.GetValues, (k, v) => new { key = k, value = v });
+
+        foreach (var item in items)
+        {
+            <tr>
+                <td>@item.key</td>
+                <td>@item.value</td>
+            </tr>
+        }
+    }
+</table>

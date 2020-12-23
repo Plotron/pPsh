@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>pPsh - prettyPush API for IoT devices</h1>
+    <p class="lead">pPsh is a free web service for pushing customized notifications from your resource-limited IoT devices. Based on a simple HTTP API, even your most basic internet devices can shout out to the world, no <code>pretty please</code> required!</p>
+    <p>@Html.ActionLink("Learn more", "About", null, new { @class = "btn btn-primary" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            You can create a scenario, set up actions, add your devices and toggle them on. The final step is to send a GET request to the provided scenario URL with your device key and optional parameters.
+        </p>
+        <p>@Html.ActionLink("Learn more", "API", null, new { @class = "btn btn-secondary" })</p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Unleash your creativity</h2>
+        <p>Current features include e-mail and browser notifications.</p>
+        <p><a class="btn btn-secondary" href="#">Visit our DevBlog &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Want more?</h2>
+        <p>Is there something you need that we don't already have? <strong>Send a feature request</strong> using our contact data.</p>
+        <p>@Html.ActionLink("Contact us", "Contact", null, new { @class = "btn btn-secondary" })</p>
+    </div>
+</div>
